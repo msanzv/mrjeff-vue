@@ -20,8 +20,7 @@
         <td>{{ user.phone }}</td>
         <td>{{ user.website }}</td>
         <td>
-          <span>...</span>
-          <!-- <a class="js-user-delete" href="#">Delete</a> -->
+          <a href="#" @click.prevent="$emit('deleteUser', user.id)">Delete</a>
         </td>
       </tr>
     </tbody>

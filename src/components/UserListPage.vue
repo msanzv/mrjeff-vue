@@ -4,7 +4,7 @@
 
     <section>
       <div class="container">
-        <users-table :users="users"></users-table>
+        <users-table :users="users" @deleteUser="deleteUser"></users-table>
       </div>
     </section>
 
@@ -13,14 +13,22 @@
 
 <script>
 import UsersService from '@/services/UsersService'
-
 import UsersTable from '@/components/UsersTable'
 
 export default {
-  name: 'HelloWorld',
+  name: 'users-page',
 
   components: {
     UsersTable
+  },
+
+  methods: {
+    deleteUser (userId) {
+      UsersService.delete(userId)
+        .then(() => {
+          this.users = this.users.filter(user => user.id !== userId)
+        })
+    }
   },
 
   created () {
@@ -38,20 +46,5 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-/* h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-} */
 </style>

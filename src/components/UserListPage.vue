@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h2>Mr Jeff - Vue Version</h2>
+    <div class="container">
+      <h2>Mr Jeff - User List</h2>
+    </div>
 
     <section>
       <div class="container">

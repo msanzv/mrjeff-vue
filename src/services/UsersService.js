@@ -6,7 +6,15 @@ export default {
     .then(res => res.data)
     .catch(err => { throw err }),
 
-  delete: (userId) => axios.delete(API.SERVER + API.USERS_DELETE.replace(':userId', userId), API.CONFIG)
+  get: (userId) => axios.get(API.SERVER + API.USER_GET.replace(':userId', userId), API.CONFIG)
+    .then(res => res.data)
+    .catch(err => { throw err }),
+
+  put: (userId, data) => axios.put(API.SERVER + API.USER_PUT.replace(':userId', userId), JSON.stringify(data), API.CONFIG)
+    .then(res => res.data)
+    .catch(err => { throw err }),
+
+  delete: (userId) => axios.delete(API.SERVER + API.USER_DELETE.replace(':userId', userId), API.CONFIG)
     .then(res => res.data)
     .catch(err => { throw err })
 }

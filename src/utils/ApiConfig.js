@@ -12,5 +12,7 @@ module.exports = {
   SERVER: 'https://jsonplaceholder.typicode.com',
 
   USERS_GET: '/users',
-  USERS_DELETE: '/users/:userId'
+  USER_GET: '/users/:userId',
+  USER_PUT: '/users/:userId',
+  USER_DELETE: '/users/:userId'
 }

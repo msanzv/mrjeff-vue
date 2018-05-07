@@ -6,8 +6,8 @@
         <th>Name</th>
         <th>Username</th>
         <th>Email</th>
-        <th>Phone</th>
         <th>Website</th>
+        <th>Phone</th>
         <th>Actions</th>
       </tr>
     </thead>
@@ -17,9 +17,11 @@
         <td>{{ user.name }}</td>
         <td>{{ user.username }}</td>
         <td>{{ user.email }}</td>
+        <td><a :href="user.website" target="_blank">{{ user.website }}</a></td>
         <td>{{ user.phone }}</td>
-        <td>{{ user.website }}</td>
         <td>
+          <router-link :to="`/users/${user.id}`">Edit</router-link>
+          <span> · </span>
           <a href="#" @click.prevent="$emit('deleteUser', user.id)">Delete</a>
         </td>
       </tr>
